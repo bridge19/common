@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.shengxun.common</groupId>
+    <artifactId>common-utility</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>common-utility</name>
+    <description>公共服务</description>
+	
+	<properties>
+		<lombok.version>1.16.18</lombok.version>
+		<spring.boot.version>2.0.4.RELEASE</spring.boot.version>
+		<spring.web.version>5.0.8.RELEASE</spring.web.version>
+		<httpclient.version>4.5.6</httpclient.version>
+		<commons-io.version>2.4</commons-io.version>
+		<oss-client.version>3.1.0</oss-client.version>
+		<fastdfs-client.version>1.26.2</fastdfs-client.version>
+		<commons-lang3.version>3.7</commons-lang3.version>
+		<fastjson.version>1.2.47</fastjson.version>
+		<slf4j.version>1.7.2</slf4j.version>
+		<dom4j.version>1.6.1</dom4j.version>
+		<java.version>1.8</java.version>
+		<zookeeper.version>3.4.13</zookeeper.version>
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+			<version>${spring.boot.version}</version>
+			<scope>provided</scope>
+		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>${spring.boot.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>${spring.boot.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.boot.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>httpclient</artifactId>
+          <version>${httpclient.version}</version>
+        </dependency> 
+	    
+        <dependency>
+          <groupId>org.apache.httpcomponents</groupId>
+          <artifactId>httpmime</artifactId>
+          <version>${httpclient.version}</version>
+        </dependency> 
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>${commons-io.version}</version>
+            <scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>${fastjson.version}</version>
+            <scope>provided</scope>
+		</dependency>
+
+		<!--fastdfs文件存储-->
+		<dependency>
+			<groupId>com.github.tobato</groupId>
+			<artifactId>fastdfs-client</artifactId>
+			<version>${fastdfs-client.version}</version>
+		</dependency>
+		<!--OSS文件存储-->
+		<dependency>
+			<groupId>com.aliyun.oss</groupId>
+			<artifactId>aliyun-sdk-oss</artifactId>
+			<version>${oss-client.version}</version>
+		</dependency>
+
+		<!-- commons-lang3 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commons-lang3.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>${slf4j.version}</version>
+            <scope>provided</scope>
+		</dependency>
+		
+		
+        <dependency>
+            <groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>${dom4j.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+		    <artifactId>zookeeper</artifactId>
+		    <version>${zookeeper.version}</version>
+		    <exclusions>
+		    	<exclusion>
+		    		<groupId>log4j</groupId>
+		    		<artifactId>log4j</artifactId>
+		    	</exclusion>
+		    	<exclusion>
+		    		<groupId>org.slf4j</groupId>
+		    		<artifactId>slf4j-log4j12</artifactId>
+		    	</exclusion>
+		    </exclusions>
+		</dependency>
+	</dependencies>
+	
+	
+	<distributionManagement>  
+        <repository>  
+            <id>releases</id>  
+            <url>  
+                http://192.168.20.81:8081/repository/maven-releases/
+            </url>  
+        </repository>  
+        <snapshotRepository>  
+            <id>snapshots</id>  
+            <url>  
+                http://192.168.20.81:8081/repository/maven-snapshots/
+            </url>  
+        </snapshotRepository>  
+    </distributionManagement> 
+</project>
